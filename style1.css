@@ -1,0 +1,30 @@
+        h1 {
+         font-size:80px;
+        margin-bottom: 0; /* Removes the space below the h1 to bring the tagline closer */
+        }
+        body {
+            background-color: antiquewhite;
+            text-align: center; /* Center aligns all text in the body */
+            margin-top: 200px; /* Adds some space at the top of the page */
+        }
+        
+        p {
+            margin-top: 0; /* Removes the space above the paragraph to keep it close to the h1 */
+            font-size: 20px;
+        }
+        button {
+            font-size: 20px; /* Larger font size for visibility */
+            padding: 10px 20px; /* Padding around the text inside the button */
+            background-color: #4CAF50; /* A green background color */
+            color: white; /* White text color */
+            border: none; /* No border */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Cursor changes to a pointer to indicate it's clickable */
+            transition: background-color 0.3s; /* Smooth transition for hover effect */
+        }
+        
+        button:hover {
+            background-color: #45a049; /* Darker shade of green when hovered */
+        }
+
+        

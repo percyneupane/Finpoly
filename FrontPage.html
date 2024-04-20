@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FINPOLY</title>
+    <link rel="stylesheet" href="main.css">
+    <script src="game.js"></script>
+      
+</head>
+<body>
+    <div class="table" style="display:none;">
+        <div id="spendingModal" style="display:none;">
+            <p id="spendingPrompt">How much would you like to spend on <span id="categoryName"></span>?</p>
+            <input type="number" id="spendingInput" placeholder="Enter amount" />
+            <button onclick="processSpending()">Submit</button>
+        </div>
+        <div class="user-income-display">
+            <h3>Your Income: <span id="incomeDisplay">$0</span></h3>
+        </div>
+        <div class="board">
+            <div class="pawn"></div>
+            <div class="center">
+                <div class="community-chest-deck">
+                    <div class="deck"></div>
+                </div>
+                <h1 class="title">FINPOLY</h1>
+                <div class="chance-deck">
+                    <h2 class="label"></h2>
+                    <div class="deck"></div>
+                </div>
+            </div>
+
+            <div class="space corner go">
+                <div class="container">
+                    <div id = "0">
+                    <div class="instructions">Let's start our game</div>
+                    <div class="go-word">go</div>
+                    0</div>
+                </div>
+            </div>
+    
+            <div class="row horizontal-row bottom-row">
+                <div class="space property">
+                    <div class="container">
+                        <div id = "9">
+                        <div class="color-bar light-blue"></div>
+                        <div class="essentials">
+                        <div class="name">Housing</div>
+                        </div>
+                        9</div>
+                    </div>
+                </div>
+                <div class="space property">
+                    <div class="container">
+                        <div id = "8">
+                        <div class="color-bar light-blue"></div>
+                        <div class="investment">
+                        <div class="name">Invest-<br>ment</div>
+                        8</div>
+                    </div>
+
+                    </div>
+                </div>
+                <div class="space chance">
+                    <div class="container">
+                        <div id = "7">
+                        <div class="wants">
+                        <div class="name">Dine<br>out</div>
+                        </div>
+                       7</div>
+                    </div>
+                </div>
+                <div class="space property">
+                    <div class="container">
+                        <div id = "6">
+                        <div class="color-bar light-blue"></div>
+                        <div class="essentials">
+                        <div class="name">Electr-<br>icity</div>
+                        </div>
+                        6</div>
+                    </div>
+                </div>
+                <div class="space railroad">
+                    <div class="container">
+                        <div id = "5">
+                        <div class="essentials">
+                        <div class="name">Transport</div>
+                        </div>
+                        5</div>
+                    </div>
+                </div>
+                <div class="space fee income-tax">
+                    <div class="container">
+                        <div id = "4">
+                        <div class="essentials">
+                        <div class="name">Grocery</div>
+                        </div>
+                        4</div>
+                    </div>
+                </div>
+                <div class="space property">
+                    <div class="container">
+                        <div class="color-bar dark-purple"></div>
+                        <div id = "3">
+                        <div class="wants">
+                        <div class="name">Doordash</div>
+                        </div>
+                        3</div>
+
+                    </div>
+                </div>
+                <div class="space community-chest">
+                    <div class="container">
+                        <div id = "2">
+                        <div class="essentials">
+                        <div class="name">Water</div>
+                        </div>
+                        2</div>
+
+                    </div>
+                </div>
+                <div class="space property">
+                    <div class="container">
+                        <div class="color-bar dark-purple"></div>
+                        <div id = "1">
+                        <div class="wants">
+                        <div class="name three-line-name">Shopping</div>
+                        </div>
+                        1</div>
+
+                    </div>
+                </div>
+            </div>
+    
+            <div class="space corner">
+                <div class="investment">
+                <div class="just">Fidelity</div>
+                </div>
+                <div id = "20">20</div>
+
+            </div>
+
+    
+            <div class="row vertical-row left-row">
+                <div class="space property">
+                    <div class="container">
+                        <div class="color-bar orange"></div>
+                        <div id = "19">
+                        <div class="wants">
+                        <div class="name">Drinking</div>
+                        </div>
+                        19</div>
+                    </div>
+                </div>
+                <div class="space property">
+                    <div class="container">
+                        <div class="color-bar orange"></div>
+                        <div id = "18">
+                        <div class="wants">
+                        <div class="name">Restaurant</div>
+                        </div>
+                        18</div>
+                    </div>
+                </div>
+                <div class="space community-chest">
+                    <div class="container">
+                        <div id = "17">
+                        <div class="essentials">
+                        <div class="name">Internet</div>
+                        </div>
+                        17</div>
+                    </div>
+                </div>
+                <div class="space property">
+                    <div class="container">
+                        <div class="color-bar orange"></div>
+                        <div id = "16">
+                        <div class="essentials">
+                        <div class="name">Childcare</div>
+                        </div>
+                       16 </div>
+                    </div>
+                </div>
+                <div class="space railroad">
+                    <div class="container">
+                        <div id = "15">
+                        <div class="wants">
+                        <div class="name long-name">Movie</div>
+                        </div>
+                        15</div>
+                    </div>
+                </div>
+                <div class="space property">
+                    <div class="container">
+                        <div id = "14">
+                        <div class="color-bar purple"></div>
+                        <div class="investment">
+                        <div class="name">Fidelity Broker-<br>age</div>
+                        </div>
+                       14 </div>
+                    </div>
+                </div>
+                <div class="space property">
+                    <div class="container">
+                        <div id = "13">
+                        <div class="color-bar purple"></div>
+                        <div class="wants">
+                        <div class="name">Eat Out</div>
+                        </div>
+                        13</div>
+                    </div>
+                </div>
+                <div class="space utility electric-company">
+                    <div class="container">
+                        <div id = "12">
+                        <div class="Savings">
+                        <div class="name">Savings</div>
+                        </div>
+                        12</div>
+                    </div>
+                </div>
+                <div class="space property">
+                    <div class="container">
+                        <div id = "11">
+                        <div class="color-bar purple"></div>
+                        <div class="investment">
+                        <div class="name">Ira</div>
+                        </div>
+                       11 </div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="space corner free-parking">
+                <div class="container">
+                    <div id = "30">
+                    <div class="essentials">
+                    <div class="name">Debt</div>
+                    </div>
+                   30 </div>
+                </div>
+            </div>
+    
+            <div class="row horizontal-row top-row">
+                <div class="space property">
+                    <div class="container">
+                        <div id = "21">
+                        <div class="color-bar red"></div>
+                        <div class="wants">
+                        <div class="name">Movie</div>
+                        </div>
+                        21</div>
+                    </div>
+                </div>
+                <div class="space chance">
+                    <div class="container">
+                        <div id = "22">
+                        <div class="wants">
+                        <div class="name">Take-out</div>
+                        </div>
+                       22 </div>
+
+                    </div>
+                </div>
+                <div class="space property">
+                    <div class="container">
+                        <div id = "23">
+                        <div class="color-bar red"></div>
+                        <div class="wants">
+                        <div class="name">Shopping</div>
+                        </div>
+                       23 </div>
+                    </div>
+                </div>
+                <div class="space property">
+                    <div class="container">
+                        <div id = "24">
+                        <div class="color-bar red"></div>
+                        <div class="essentials">
+                        <div class="name">Grocery</div>
+                        </div>
+                      24</div>
+                    </div>
+                </div>
+                <div class="space">
+                    <div class="container">
+                        <div id = "25">
+                        <div class="wants">
+                        <div class="name">Vacation</div>
+                        </div>
+                      25</div>
+                    </div>
+                </div>
+                <div class="space property">
+                    <div class="container">
+                        <div id = "26">
+                        <div class="color-bar yellow"></div>
+                        <div class="wants">
+                        <div class="name">Bar</div>
+                        </div>
+                      26</div>
+                    </div>
+                </div>
+                <div class="space property">
+                    <div class="container">
+                        <div id = "27">
+                        <div class="essentials">
+                        <div class="name">water</div>
+                        </div>
+                      27</div>
+                    </div>
+                </div>
+                <div class="space utility waterworks">
+                    <div class="container">
+                        <div id = "28">
+                        <div class="essentials">
+                        <div class="name">Grocery</div>
+                        </div>
+                      28</div>
+                    </div>
+                </div>
+                <div class="space property">
+                    <div class="container">
+                        <div id = "29">
+                        <div class="color-bar yellow"></div>
+                        <div class="Savings">
+                        <div class="name">Fidelity Savings Account</div>
+                        </div>
+                        29</div>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="space corner go-to-jail">
+                <div class="container">
+                    <div id = "10">
+                    <div class="wants">
+                    <div class="name">Restaurant</div>
+                    </div>
+                    10</div>
+                </div>
+            </div>
+    
+            <div class="row vertical-row right-row">
+                <div class="space property">
+                    <div class="container">
+                        <div id = "31">
+                        <div class="color-bar green"></div>
+                        <div class="wants">
+                        <div class="name">Vacation</div>
+                        </div>
+                    31</div>
+                    </div>
+                </div>
+                <div class="space property">
+                    <div class="container">
+                        <div id = "32">
+                        <div class="color-bar green"></div>
+                        <div class="short-term-savings">
+                        <div class="name three-line-name">Piggy Bank</div>
+                        </div>
+                     32</div>
+                    </div>
+                </div>
+                <div class="space community-chest">
+                    <div class="container">
+                        <div id = "33">
+                        <div class="wants">
+                        <div class="name">Shopping</div>
+                        </div>
+                    33</div>
+                    </div>
+                </div>
+                <div class="space property">
+                    <div class="container">
+                        <div id = "34">
+                        <div class="color-bar green"></div>
+                        <div class="wants">
+                        <div class="name long-name">Party</div>
+                        </div>
+                    </div>
+                  34</div>
+                </div>
+                <div class="space railroad">
+                    <div class="container">
+                        <div id = "35">
+                        <div class="investment">
+                        <div class="name">Mutual Funds</div>
+                        </div>
+                      35</div>
+                    </div>
+                </div>
+                <div class="space chance">
+                    <div class="container">
+                        <div id = "36">
+                        <div class="wants">
+                        <div class="name">Shopping</div>
+                        </div>
+                        36</div>
+                    </div>
+                </div>
+                <div class="space property">
+                    <div class="container">
+                        <div id = "37">
+                        <div class="color-bar dark-blue"></div>
+                        <div class="essentials">
+                        <div class="name">Credit Card debt</div>
+                        </div>
+                        37</div>
+                    </div>
+                </div>
+                <div class="space fee luxury-tax">
+                    <div class="container">
+                        <div id = "38">
+                        <div class="investment">
+                        <div class="name">Stocks</div>
+                        </div>
+                        38</div>
+                    </div>
+                </div>
+                <div class="space property">
+                    <div class="container">
+                        <div id = "39">
+                        <div class="color-bar dark-blue"></div>
+                        <div class="essentials">
+                        <div class="name">Transpo-<br>rtation</div>
+                        </div>
+                        39</div>
+                    </div>
+                </div>
+            </div>
+            <div class="dice-container">
+                <button onclick="rollDice()">Randomize</button>
+                <div id="diceResult"></div>
+            </div>
+        </div>
+    </div> 
+<div id="chartContainer" style="width:500px; height:300px;">
+    <canvas id="spendingChart"></canvas>
+</div>
+    
+    
+</body>
+</html>

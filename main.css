@@ -1,0 +1,310 @@
+/* Typography */
+html,body{
+  height: 100%;
+  width:100%;
+  
+}
+body {
+    font-family: 'Times New Roman', serif; /* Changed to Times New Roman */
+    font-weight: 400;
+    font-size: 12px;
+    color: #080808;
+    text-transform: uppercase;
+}
+
+/* Income Display Enhancements */
+.user-income-display {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 20px;
+    color: #333;
+    background-color: #f2f2f2; /* Light grey background for visibility */
+    border: 2px solid #ccc; /* Adding a subtle border */
+    padding: 10px;
+    border-radius: 5px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* Soft shadow for depth */
+}
+  
+  /* Colors */
+  .dark-purple { background: #41994e; }
+  .light-blue  { background: #FFD700; }
+  .purple      { background: #41994e; }
+  .orange      { background: #FFD700 }
+  .red         { background: #41994e; }
+  .yellow      { background: #FFD700 }
+  .green       { background: #41994e; }
+  .dark-blue   { background: #FFD700 }
+  
+  /* Global Styles */
+  * {
+    box-sizing: border-box;
+  }
+  
+  body {
+    margin: 0;
+    background-image: url("https://1000logos.net/wp-content/uploads/2017/11/Fidelity-Logo.png");
+    background-position: center;
+    background-repeat: repeat;
+    background-size: 100px;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    margin: 0;
+  }
+  
+  /* Layout */
+  .table {
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+  
+  .board {
+    display: grid;
+    grid-template-columns: 125px repeat(9, 80px) 125px;
+    grid-template-rows: 125px repeat(9, 80px) 125px;
+    grid-gap: 2px;
+    margin: 50px auto;
+    width: 994px;
+    height: 994px;
+    background: #080808;
+    border: 2px solid #080808;
+  }
+  
+  .center {
+    grid-column: 2 / 11;
+    grid-row: 2 / 11;
+    background: #fafaf8;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    justify-items: center;
+    align-items: center;
+  }
+  
+  .title {
+    grid-column: 1 / 9;
+    grid-row: 4;
+    font-size: 90px;
+    font-weight: 400;
+    letter-spacing: 12px;
+  }
+  
+  .label {
+    text-align: center;
+    font-weight: 500;
+    letter-spacing: 3px;
+    padding-bottom: 10px;
+  }
+  
+/* Typography and Basic Layout */
+.row {
+    display: grid;
+    grid-gap: 2px;
+  }
+  
+  .horizontal-row {
+    grid-template-columns: repeat(9, 80px);
+    grid-template-rows: 125px;
+  }
+  
+  .vertical-row {
+    grid-template-columns: 125px;
+    grid-template-rows: repeat(9, 80px);
+  }
+  
+  .vertical-row .container {
+    top: 50%;
+    left: 50%;
+  }
+  
+  .bottom-row {
+    grid-column: 2 / 11;
+    grid-row: 11;
+  }
+  
+  .left-row {
+    grid-column: 1;
+    grid-row: 2 / 11;
+  }
+  
+  .left-row .container {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+  
+  .top-row {
+    grid-column: 2 / 11;
+    grid-row: 1;
+  }
+  
+  .top-row .container {
+    transform: rotate(180deg);
+  }
+  
+  .right-row {
+    grid-column: 11;
+    grid-row: 2 / 11;
+  }
+  
+  .right-row .container {
+    transform: translate(-50%, -50%) rotate(270deg);
+  }
+  
+  /* Space Styles */
+  .space {
+    background: #fafaf8; /* Converted from $board */
+    text-align: center;
+  }
+  
+  .space .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    transform-origin: center;
+    height: 125px;
+    width: 80px;
+  }
+  
+  .space .name,
+  .space .instructions {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  .space .price {
+    font-size: 7px;
+    font-weight: 400;
+    padding-bottom: 5px;
+  }
+  
+  .corner .container {
+    justify-content: space-around;
+    height: 100%;
+    width: 100%;
+  }
+  
+  .corner .name {
+    padding: 0;
+  }
+  
+  .property .color-bar {
+    height: 25px;
+    border-bottom: 2px solid #080808; /* Converted from $black */
+  }
+  
+  .property .name {
+    padding-bottom: 50px;
+  }
+  
+  .railroad .name {
+    padding-top: 10px;
+  }
+  
+  .railroad .drawing {
+    font-size: 60px;
+    color: #080808; /* Converted from $black */
+  }
+  
+  .utility .name {
+    padding-top: 10px;
+  }
+  
+  .utility .drawing {
+    font-size: 70px;
+  }
+  
+  .fee .name {
+    padding-top: 15px;
+    font-size: 14px;
+  }
+  
+  .fee .instructions {
+    font-size: 10px;
+  }
+  
+  /* Specific Space Styles */
+  .go {
+    grid-column: 11;
+    grid-row: 11 / 12;
+    position: relative;
+  }
+  
+  .go .container {
+    justify-content: flex-start;
+    transform: rotate(315deg);
+  }
+  
+  .go .instructions {
+    padding: 0 30px;
+  }
+  
+  .go .go-word {
+    font-size: 55px;
+    color: #f50c2b; /* Converted from $red */
+  }
+  
+  .go .arrow {
+    font-size: 40px;
+    color: #f50c2b; /* Converted from $red */
+    position: absolute;
+    bottom: -10px;
+    left: 5px;
+  }
+
+  .dice-container {
+    position: absolute;
+    top: 90%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for exact centering */
+    text-align: center;
+    font-size: medium;
+  
+}
+.pawn {
+  width: 20px; /* Pawn size */
+  height: 20px; /* Pawn size */
+  background-color: red; /* Pawn color */
+  position:absolute;
+  border-radius: 50%; /* Makes the pawn circular */
+  /* Set initial position, adjust as necessary */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.dice-container {
+  position: absolute;
+  top: 90%; /* Center vertically */
+  left: 50%; /* Center horizontally */
+  transform: translate(-50%, -50%); /* Adjust for exact centering */
+  text-align: center;
+}
+
+.dice-container button {
+  font-size: 16px; /* Larger font size for better readability */
+  padding: 10px 20px; /* Adequate padding for a better click area */
+  background-color: #4CAF50; /* A fresh green background */
+  color: white; /* Text color */
+  border: none; /* No border for a cleaner look */
+  border-radius: 5px; /* Rounded corners */
+  cursor: pointer; /* Cursor changes to a pointer to indicate it's clickable */
+  outline: none; /* Removes the outline to focus on aesthetics */
+  transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition for hover and focus effects */
+}
+
+.dice-container button:hover, .dice-container button:focus {
+  background-color: #45a049; /* A slightly darker green on hover and focus for feedback */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for 3D effect */
+}
+
+.dice-container button:active {
+  background-color: #397a3b; /* Even darker green when the button is clicked */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Deeper shadow to simulate pressing down */
+}
+
+
+
+
+
+
+
+  
